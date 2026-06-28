@@ -21,19 +21,69 @@
 </div>
 <div id="main-site">
   <nav>
-    <a href="index.html" class="nav-logo">ChESS</a>
-    <ul class="nav-links">
-      <li><a href="index.html#hero" style="color:var(--acid-green)">Home</a></li>
-      <li><a href="index.html#about">About</a></li>
-      <li><a href="Events.html">What We Do</a></li>
-      <li><a href="Team.html">Team</a></li>
-      <li><a href="History.html">History</a></li>
-      <li><a href="contactUs.html">Contact</a></li>
-      
-    </ul>
+    <a href="index.html" class="nav-logo">
+      <img src="images/ChESS_logo.svg" alt="ChESS" style="margin-right:8px; 
+  vertical-align:middle;" height="36px" width="36px">
+    </a>
+    <!-- Hamburger button (mobile only) -->
+  <button class="hamburger" id="hamburger" aria-label="Open menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+    <ul class="nav-links" id="nav-links">
+  <li>
+    <a href="index.html#hero" style="color:var(--acid-green)">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+      </svg>
+      Home
+    </a>
+  </li>
+  <li>
+    <a href="index.html#about">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+      </svg>
+      About
+    </a>
+  </li>
+  <li>
+    <a href="Events.html">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/>
+      </svg>
+      Events
+    </a>
+  </li>
+  <li>
+    <a href="Team.html">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+      </svg>
+      Team
+    </a>
+  </li>
+  <li>
+    <a href="History.html">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z"/>
+      </svg>
+      History
+    </a>
+  </li>
+  <li>
+    <a href="contactUs.html">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+      </svg>
+      Contact
+    </a>
+  </li>
+</ul>
   </nav>
   <div class="ticker-wrap" style="margin-top:64px">
-  <div class="ticker-wrap" style="margin-top:64px">
+  
     <div class="ticker-track">
       <span class="ticker-item">Chemical Engineering Student's Society</span>
       <span class="ticker-item">IIT Roorkee — Est. 1999</span>
@@ -55,7 +105,7 @@
       <span class="ticker-item">Process Control</span>
       <span class="ticker-item">Heat Transfer</span>
       <span class="ticker-item">Open Day 2025</span>
-      <span class="ticker-item">Welcoming Batch of 2028</span>
+      <span class="ticker-item">Welcoming Batch of 2026</span>
     </div>
   </div>
   </div>
@@ -153,12 +203,6 @@
       </div>
     </div>
   </section>
-  <style>
-    @keyframes floatFormula {
-      0%,100%{transform:translateY(0);}
-      50%{transform:translateY(-12px);}
-    }
-  </style>
   <section id="activities">
     <div class="reveal">
       <div class="section-tag">// 002 &nbsp; What We Do</div>
