@@ -13,3 +13,23 @@ document.addEventListener('mousemove', e => {
   cursorGlow.style.left = e.clientX + 'px';
   cursorGlow.style.top = e.clientY + 'px';
 });
+// HAMBURGER MENU
+document.addEventListener('DOMContentLoaded', () => {
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+  
+  console.log("Hamburger:", hamburger);
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        navLinks.classList.remove('open');
+      });
+    });
+  }
+});
