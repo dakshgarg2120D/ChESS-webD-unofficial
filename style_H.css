@@ -834,7 +834,40 @@
     color: var(--text-muted);
     letter-spacing: 2px;
   }
+  /* Social Icons in Footer */
+.footer-socials {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
 
+.footer-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(0,255,136,0.15);
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-social-link:hover {
+  background: rgba(0,255,136,0.1);
+  border-color: var(--acid-green);
+  color: var(--acid-green);
+  box-shadow: var(--glow-green);
+  transform: translateY(-2px);
+}
+
+.footer-social-link svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
   /* Animated background grid */
   .grid-bg {
     position: absolute;
