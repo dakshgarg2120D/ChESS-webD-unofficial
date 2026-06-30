@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>What We Do — ChESS IITR</title>
+<title>Events — ChESS IITR</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Orbitron:wght@400;700;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;800&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="style_E.css"/>
 </head>
@@ -12,65 +12,151 @@
 <div class="scanline"></div>
 <div id="main-site" class="visible">
   <nav>
-    <a href="index.html" class="nav-logo">ChESS</a>
-    <ul class="nav-links">
-      <li><a href="index.html#hero">Home</a></li>
-      <li><a href="index.html#about">About</a></li>
-      <li><a href="Events.html" style="color:var(--acid-green)">What We Do</a></li>
-      <li><a href="Team.html">Team</a></li>
-      <li><a href="History.html">History</a></li>
-      <li><a href="contactUs.html">Contact</a></li>
-      
-    </ul>
+    <a href="index.html" class="nav-logo">
+      <img src="images/ChESS_logo.svg" alt="ChESS" style="margin-right:8px; 
+  vertical-align:middle;" height="36px" width="36px">
+    </a>
+    <!-- Hamburger button (mobile only) -->
+  <button class="hamburger" id="hamburger" aria-label="Open menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+    <ul class="nav-links" id="nav-links">
+  <li>
+    <a href="index.html#hero" >
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+      </svg>
+      Home
+    </a>
+  </li>
+  <li>
+    <a href="index.html#about">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+      </svg>
+      About
+    </a>
+  </li>
+  <li>
+    <a href="Events.html" style="color:var(--acid-green)">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/>
+      </svg>
+      Events
+    </a>
+  </li>
+  <li>
+    <a href="Team.html">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+      </svg>
+      Team
+    </a>
+  </li>
+  <li>
+    <a href="History.html">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z"/>
+      </svg>
+      History
+    </a>
+  </li>
+  <li>
+    <a href="contactUs.html">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+      </svg>
+      Contact
+    </a>
+  </li>
+</ul>
   </nav>
   <div style="height:60px"></div>
   <section id="activities">
     <div class="reveal">
-      <!-- <div class="section-tag">// 002 &nbsp; What We Do</div> -->
+      <div class="section-tag">// 002 &nbsp; Events</div>
       <h2 class="section-title">Reactions<br/>In Progress</h2>
     </div>
     <div class="activities-grid">
       <div class="activity-card reveal">
         <span class="activity-icon">🧪</span>
-        <div class="activity-num">01 / 06</div>
+        <div class="activity-num">01 / 11</div>
         <div class="activity-title">Welcome Induction</div>
         <p class="activity-desc">Every year, we roll out the red carpet for incoming B.Tech and M.Tech students — introducing them to seniors, faculty, and the vibrant culture of the department.</p>
         <div class="corner-mark"></div>
       </div>
       <div class="activity-card reveal">
-        <span class="activity-icon">🎓</span>
-        <div class="activity-num">02 / 06</div>
-        <div class="activity-title">Farewell Function</div>
-        <p class="activity-desc">A heartfelt send-off for final-year students as they step into the next chapter of their careers. We celebrate their journey and wish them the best.</p>
+        <span class="activity-icon">💃🏼</span>
+        <div class="activity-num">02 / 11</div>
+        <div class="activity-title">Freshers Party</div>
+        <p class="activity-desc">A warm welcome to our new students as they begin their exciting journey here. We celebrate your arrival and look forward to creating unforgettable memories together.</p>
+        <div class="corner-mark"></div>
+      </div>  
+      <div class="activity-card reveal">
+        <span class="activity-icon">🔥</span>
+        <div class="activity-num">03 / 11</div>
+        <div class="activity-title">Bonfire Night</div>
+        <p class="activity-desc">A cozy night of warmth, music, and laughter awaits! Join us for a bonfire celebration filled with snacks, acoustic jamming, and fun games.</p>
+        <div class="corner-mark"></div>
+      </div>
+      <div class="activity-card reveal">
+        <span class="activity-icon">🧠</span>
+        <div class="activity-num">04 / 11</div>
+        <div class="activity-title">Debates & Quizzes</div>
+        <p class="activity-desc">We fuel intellectual fire with debates, quizzes, and competitions that attract massive student participation and foster a culture of healthy rivalry.</p>
+        <div class="corner-mark"></div>
+      </div>    
+      <div class="activity-card reveal">
+        <span class="activity-icon">🗣️</span>
+        <div class="activity-num">05 / 11</div>
+        <div class="activity-title">Intern Talk</div>
+        <p class="activity-desc">An insightful session where our seniors share their experiences and guide you through navigating the internship process. Prepare to learn, connect, and excel!</p>
         <div class="corner-mark"></div>
       </div>
       <div class="activity-card reveal">
         <span class="activity-icon">📚</span>
-        <div class="activity-num">03 / 06</div>
+        <div class="activity-num">06 / 11</div>
         <div class="activity-title">Department Library</div>
         <p class="activity-desc">We maintain a rich departmental library, procuring new books with faculty input and running book donation drives by graduating students each year.</p>
         <div class="corner-mark"></div>
       </div>
       <div class="activity-card reveal">
         <span class="activity-icon">🎤</span>
-        <div class="activity-num">04 / 06</div>
+        <div class="activity-num">07 / 11</div>
         <div class="activity-title">Distinguished Lectures</div>
         <p class="activity-desc">We invite eminent scientists, engineers, and industry leaders for talks that expand horizons and inspire students beyond the textbook.</p>
         <div class="corner-mark"></div>
       </div>
       <div class="activity-card reveal">
-        <span class="activity-icon">🏆</span>
-        <div class="activity-num">05 / 06</div>
-        <div class="activity-title">Open Day</div>
-        <p class="activity-desc">A high-energy day of indoor and outdoor sports — cricket, football, basketball, volleyball, chess, carrom, table tennis. Students switch off and recharge.</p>
+        <span class="activity-icon">🏁</span>
+        <div class="activity-num">08 / 11</div>
+        <div class="activity-title">Sports Meet</div>
+        <p class="activity-desc">Our intra-department sports competition builds teamwork, fitness, and community spirit through friendly competition among all students and faculty.</p>
         <div class="corner-mark"></div>
       </div>
       <div class="activity-card reveal">
-        <span class="activity-icon">🧠</span>
-        <div class="activity-num">06 / 06</div>
-        <div class="activity-title">Debates & Quizzes</div>
-        <p class="activity-desc">We fuel intellectual fire with debates, quizzes, and competitions that attract massive student participation and foster a culture of healthy rivalry.</p>
+        <span class="activity-icon">🎓</span>
+        <div class="activity-num">09 / 11</div>
+        <div class="activity-title">Farewell Function</div>
+        <p class="activity-desc">A heartfelt send-off for final-year students as they step into the next chapter of their careers. We celebrate their journey and wish them the best.</p>
         <div class="corner-mark"></div>
+      </div>
+      <div class="activity-card reveal">
+        <span class="activity-icon">📸</span>
+        <div class="activity-num">10 / 11</div>
+        <div class="activity-title">Class Photoshoot</div>
+        <p class="activity-desc">A celebratory photoshoot honoring our final-year B.Tech and M.Tech students alongside their professors, capturing the memories and mentorship that defined this academic journey.</p>
+        <div class="corner-mark"></div>
+      </div>
+      <div class="activity-card reveal">
+        <span class="activity-icon">🎮</span>
+        <div class="activity-num">11 / 11</div>
+        <div class="activity-title">Chemblitz 3.O</div>
+        <p class="activity-desc">ChemBlitz 3.0 is here! Join the ultimate inter-IIT chemical engineering esports showdown, co-hosted by IIT Bombay and IIT Roorkee. Game on!</p>
+        <div class="corner-mark"></div>
+      </div>
       </div>
     </div>
   </section>
@@ -81,58 +167,73 @@
     </div>
 
     <div class="event-card reveal">
-      <div class="event-date">AUG 2025<span class="event-month">Welcome Mixer</span></div>
+      <div class="event-date">JUL 2026<span class="event-month">Welcome Freshers</span></div>
       <div class="event-body">
-        <div class="event-title">Induction of Batch 2029</div>
+        <div class="event-title">Introduction of Batch 2030</div>
         <p class="event-desc">ChESS welcomed the newly enrolled B.Tech and M.Tech first-year students with an orientation function — introducing them to seniors, faculty, and department facilities.</p>
-        <span class="event-tag">Induction</span>
+        <span class="event-tag">Introduction</span>
       </div>
     </div>
 
     <div class="event-card reveal">
-      <div class="event-date">SEP 2025<span class="event-month">Guest Lecture</span></div>
+      <div class="event-date">AUG 2026<span class="event-month">Treasure Hunt</span></div>
       <div class="event-body">
-        <div class="event-title">Distinguished Speaker Series — Process Safety</div>
-        <p class="event-desc">An industry expert from the petrochemical sector delivered a talk on process safety and risk management in large-scale chemical plants.</p>
-        <span class="event-tag">Lecture</span>
+        <div class="event-title">Unravel clues, conquer challenges, claim victory!</div>
+        <p class="event-desc">Get ready to embark on an epic quest! Gather your team, crack the clues, and race to uncover the hidden treasure.</p>
+        <span class="event-tag">Competition</span>
+      </div>
+    </div>
+    <div class="event-card reveal">
+      <div class="event-date">AUG 2026<span class="event-month">Alumni Carrer Talk</span></div>
+      <div class="event-body">
+        <div class="event-title">Gain expert insights, shape your future.</div>
+        <p class="event-desc">Connect with our accomplished alumni as they share invaluable career insights and professional wisdom to help guide your future path.</p>
+        <span class="event-tag">Guidance</span>
       </div>
     </div>
 
     <div class="event-card reveal">
-      <div class="event-date">OCT 2025<span class="event-month">Open Day</span></div>
+      <div class="event-date">SEP 2026<span class="event-month">Freshers Week</span></div>
       <div class="event-body">
-        <div class="event-title">ChESS Open Day 2025</div>
-        <p class="event-desc">A full day of indoor and outdoor games — cricket, football, basketball, volleyball, chess, carrom, and table-tennis — with inter-year competitions and prizes.</p>
+        <div class="event-title">Celebrate new beginnings, dance, connect.</div>
+        <p class="event-desc">A warm welcome to our new students as they begin their exciting journey here. We celebrate your arrival and look forward to creating unforgettable memories together.</p>
+        <span class="event-tag">Party</span>
+      </div>
+    </div>
+    <div class="event-card reveal">
+      <div class="event-date">OCT 2026<span class="event-month">Freshers Week</span></div>
+      <div class="event-body">
+        <div class="event-title">Intra Department Sports Meet.</div>
+        <p class="event-desc">Unite for our departmental sports meet; showcase your talent, build camaraderie, and compete for glory on the field!</p>
         <span class="event-tag">Sports</span>
       </div>
     </div>
-
-    <div class="event-card reveal">
+    <!-- <div class="event-card reveal">
       <div class="event-date">NOV 2025<span class="event-month">Quiz Night</span></div>
       <div class="event-body">
         <div class="event-title">ChemQuest — Departmental Quiz & Debate</div>
         <p class="event-desc">Students battled it out in a high-energy quiz and debate competition covering thermodynamics, reaction engineering, and current industry trends.</p>
         <span class="event-tag">Quiz</span>
       </div>
-    </div>
+    </div> -->
 
-    <div class="event-card reveal">
+    <!-- <div class="event-card reveal">
       <div class="event-date">JAN 2026<span class="event-month">Book Drive</span></div>
       <div class="event-body">
         <div class="event-title">Library Donation Campaign</div>
         <p class="event-desc">Final-year students donated textbooks and reference material to the departmental library, benefiting upcoming batches of students.</p>
         <span class="event-tag">Library</span>
       </div>
-    </div>
+    </div> -->
 
-    <div class="event-card reveal">
+    <!-- <div class="event-card reveal">
       <div class="event-date">MAR 2026<span class="event-month">Workshop</span></div>
       <div class="event-body">
         <div class="event-title">Process Simulation Bootcamp</div>
         <p class="event-desc">A hands-on workshop on Aspen Plus and process simulation tools, conducted by senior students and research scholars for juniors.</p>
         <span class="event-tag">Technical</span>
       </div>
-    </div>
+    </div> -->
 
     <div class="event-card reveal">
       <div class="event-date">APR 2026<span class="event-month">Farewell</span></div>
