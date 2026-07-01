@@ -6,6 +6,54 @@
 <title>Home — ChESS IITR</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Orbitron:wght@400;700;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;800&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="style_I.css"/>
+<style>
+  /* Local fix: keep logo from overlapping the top ticker strip */
+  nav { margin-top: 8px !important; }
+  .nav-logo-img { max-height: 48px !important; width: auto !important; display: block !important; }
+
+  /* ---- Navbar behavior ----
+     Default: opaque, normal box sitting in the page flow.
+     After scrolling past it: comes back as a fixed, transparent (blurred) bar
+     with the exact same layout/content. */
+  nav {
+    position: static;
+    width: auto;
+    z-index: 1000;
+    background: #060a09;              /* opaque base — tweak to match your theme */
+    border-bottom: 1px solid rgba(0,255,136,0.15);
+    box-shadow: none;
+    transition: background-color 0.35s ease, box-shadow 0.35s ease;
+  }
+
+  /* Placeholder keeps the page from jumping once nav switches to fixed positioning */
+  #nav-placeholder {
+    display: none;
+    width: 100%;
+  }
+  #nav-placeholder.active {
+    display: block;
+  }
+
+  /* Applied by JS once the user has scrolled past the navbar's original spot */
+  nav.nav-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin-top: 0 !important;
+    background: rgba(6,10,9,0.35);    /* transparent version of the same color */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0,255,136,0.12);
+    box-shadow: 0 6px 24px rgba(0,0,0,0.25);
+    animation: navSlideDown 0.35s ease;
+  }
+
+  @keyframes navSlideDown {
+    from { transform: translateY(-100%); }
+    to   { transform: translateY(0); }
+  }
+</style>
 </head>
 <body>
 <div id="cursor-glow"></div>
@@ -81,6 +129,7 @@
   </li>
 </ul>
   </nav>
+  <div id="nav-placeholder"></div>
   <div class="ticker-wrap" style="margin-top:64px">
   
     <div class="ticker-track">
@@ -248,6 +297,54 @@ document.addEventListener('mousemove', e => {
   cursorGlow.style.left = e.clientX + 'px';
   cursorGlow.style.top = e.clientY + 'px';
 });
+
+// NAVBAR: opaque & static by default, transparent & fixed once scrolled past
+(function () {
+  const navEl = document.querySelector('nav');
+  const placeholder = document.getElementById('nav-placeholder');
+  if (!navEl || !placeholder) return;
+
+  let navHeight = navEl.offsetHeight;
+  let ticking = false;
+
+  function applyFixed() {
+    navHeight = navEl.classList.contains('nav-fixed') ? placeholder.offsetHeight : navEl.offsetHeight;
+    if (!navEl.classList.contains('nav-fixed')) {
+      placeholder.style.height = navHeight + 'px';
+    }
+    navEl.classList.add('nav-fixed');
+    placeholder.classList.add('active');
+  }
+
+  function removeFixed() {
+    navEl.classList.remove('nav-fixed');
+    placeholder.classList.remove('active');
+    placeholder.style.height = '0';
+  }
+
+  function onScroll() {
+    const scrollY = window.scrollY || window.pageYOffset;
+    if (scrollY > navHeight) {
+      applyFixed();
+    } else {
+      removeFixed();
+    }
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(onScroll);
+      ticking = true;
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    if (!navEl.classList.contains('nav-fixed')) {
+      navHeight = navEl.offsetHeight;
+    }
+  });
+})();
 </script>
 </body>
 </html>
