@@ -7,6 +7,59 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Orbitron:wght@400;700;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;800&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="style_H.css"/>
 <link rel="stylesheet" href="style_I.css">
+<style>
+/* ---- Navbar behavior ---- */
+nav {
+  position: static;
+  width: 100%;
+  z-index: 1000;
+  background: #060a09;
+  border-bottom: 1px solid rgba(0,255,136,0.15);
+  transition: all 0.35s ease;
+}
+
+#nav-placeholder {
+  display: none;
+  width: 100%;
+}
+
+#nav-placeholder.active {
+  display: block;
+}
+
+/* Fixed state applied by JS */
+nav.nav-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin-top: 0 !important;
+  background: rgba(6,10,9,0.75); /* Slightly darker for better readability */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0,255,136,0.25);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.25);
+  animation: navSlideDown 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes navSlideDown {
+  from { transform: translateY(-100%); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+/* ---- Bigger logo with glow (matches Events page) ---- */
+/* .nav-logo-img {
+  height: 44px;
+  width: 44px;
+  filter: drop-shadow(0 0 8px rgba(0,255,136,0.55)) drop-shadow(0 0 18px rgba(0,255,136,0.25));
+  transition: filter 0.3s ease, transform 0.3s ease;
+} */
+
+.nav-logo:hover .nav-logo-img {
+  filter: drop-shadow(0 0 12px rgba(0,255,136,0.8)) drop-shadow(0 0 26px rgba(0,255,136,0.4));
+  transform: scale(1.05);
+}
+</style>
 </head>
 <body>
 <div id="cursor-glow"></div>
@@ -14,8 +67,7 @@
 <div id="main-site" class="visible">
 <nav>
     <a href="index.html" class="nav-logo">
-      <img src="images/ChESS_logo.svg" alt="ChESS" style="margin-right:8px; 
-  vertical-align:middle;" height="36px" width="36px">
+      <img src="images/chess-logo.png" alt="ChESS" class="nav-logo-img">
     </a>
     <!-- Hamburger button (mobile only) -->
   <button class="hamburger" id="hamburger" aria-label="Open menu">
@@ -74,6 +126,9 @@
   </li>
 </ul>
   </nav>
+  
+  <div id="nav-placeholder"></div>
+  
   <div style="height:60px"></div>
   <section id="history">
     <div class="reveal" style="text-align:center;margin-bottom:80px;">
@@ -131,5 +186,61 @@
   </footer>
 </div>
 <script src="script_H.js"></script>
+<script>
+// NAVBAR SCROLL LOGIC
+(function () {
+  const navEl = document.querySelector('nav');
+  const placeholder = document.getElementById('nav-placeholder');
+  if (!navEl || !placeholder) return;
+
+  let navHeight = navEl.offsetHeight;
+  let ticking = false;
+
+  function applyFixed() {
+    if (!navEl.classList.contains('nav-fixed')) {
+      // Set placeholder height to prevent page layout jumping
+      placeholder.style.height = navHeight + 'px';
+      navEl.classList.add('nav-fixed');
+      placeholder.classList.add('active');
+    }
+  }
+
+  function removeFixed() {
+    if (navEl.classList.contains('nav-fixed')) {
+      navEl.classList.remove('nav-fixed');
+      placeholder.classList.remove('active');
+      placeholder.style.height = '0';
+    }
+  }
+
+  function onScroll() {
+    const scrollY = window.scrollY || window.pageYOffset;
+
+    // Trigger the dropdown after scrolling 150px (creates a smooth delay)
+    if (scrollY > 150) {
+      applyFixed();
+    }
+    // Snap back to original state only when user is basically back at the top
+    else if (scrollY <= navHeight) {
+      removeFixed();
+    }
+
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(onScroll);
+      ticking = true;
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    if (!navEl.classList.contains('nav-fixed')) {
+      navHeight = navEl.offsetHeight;
+    }
+  });
+})();
+</script>
 </body>
 </html>
